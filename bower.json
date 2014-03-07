@@ -1,0 +1,14 @@
+{
+  "name": "todo",
+  "version": "0.0.0",
+  "authors": [
+    "Mike Gardiner <conversationing@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "knockout": "3.1.0",
+    "jquery": "2.1.0",
+    "moment": "2.5.1"
+  }
+}

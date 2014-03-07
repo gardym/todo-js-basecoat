@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="js/build/index.js"></script>
+  <style type="text/css">
+    .item .done-indicator { color: #082; }
+    .item.done { background-color: #efe; }
+    .item[data-priority=critical] { background-color: #f57; }
+    .item[data-priority=info] { background-color: #ffc; }
+  </style>
+</head>
+<body>
+  <h3>Todo</h3>
+  <button data-bind="click: newItem">New Item</button>
+  <ul class="items" data-bind="foreach: items">
+    <li class="item" data-bind="css: { done: isDone }, attr: { 'data-priority': priority }">
+      <input type="checkbox" class="do-it" data-bind="checked: isDone" />
+      <span class="title" data-bind="text: title"></span>
+      <span class="done-indicator" data-bind="visible: isDone">✔</span>
+      (<span data-bind="text: priority"></span>)
+    </li>
+  </ul>
+</body>
+</html>
