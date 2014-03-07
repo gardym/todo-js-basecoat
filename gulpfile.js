@@ -6,11 +6,11 @@ var shell = require('gulp-shell');
 var jasmine = require('gulp-jasmine');
 
 gulp.task('bower', function() {
-  return bower().pipe(gulp.dest('./lib'));
+  return bower();
 });
 
 gulp.task('compileKnockout', ['bower'], function() {
-  gulp.src('./js/app/bower_components/knockout')
+  gulp.src('./app/js/bower_components/knockout')
     .pipe(shell('cd <%= file.path %> && npm install && grunt'));
 });
 
@@ -25,7 +25,7 @@ gulp.task('jasmine', function() {
     .pipe(jasmine());
 });
 
-gulp.task('default', ['clean', 'browserify', 'compileKnockout', 'jasmine']);
+gulp.task('default', ['compileKnockout', 'browserify']);
 
 gulp.task('clean', function() {
   gulp.src(['./app/js/build/*',
